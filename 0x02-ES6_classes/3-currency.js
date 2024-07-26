@@ -4,6 +4,10 @@ export default class Currency {
     this.name = name;
   }
 
+  displayFullCurrency() {
+    return `${this._name} (${this._code})`;
+  }
+
   set code(code) {
     if ((code !== 'string') && !(code instanceof String)) {
       throw new TypeError('Code must be a string');
@@ -24,9 +28,5 @@ export default class Currency {
 
   get name() {
     return this._name;
-  }
-
-  displayFullCurrency() {
-    return `${this._name} (${this._code})`;
   }
 }
